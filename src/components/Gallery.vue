@@ -1,14 +1,14 @@
 <template lang="pug">
   v-container(text-xs-center)
     v-layout(row wrap)
-      v-flex(xs12 sm6 md4 v-for="project in projects" :key="project.index")
+      v-flex(xs12 md6 lg4 v-for="project in projects" :key="project.index")
         v-card.text-xs-center.mx-4.mb-4
           v-card-media(:src="project.src" height="250px")
           v-card-title(primary-title)
             div
               h3 {{ project.title }}
               div.text-xs-left {{ project.description }}
-          v-card-actions.text-xs-center
+          v-card-actions(center)
             v-btn(:href="project.website" target="new" color="success" v-if="project.website != ''") Project Website
             v-btn(:href="project.github" target="new" color="primary") Project Github
 </template>
@@ -72,3 +72,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-card__actions { justify-content: center; }
+</style>
