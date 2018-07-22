@@ -11,7 +11,7 @@
     v-toolbar-items
       v-btn(to="/" flat) Home
       v-btn(to="/about" flat) About
-      v-btn(to="/contact" flat) Contact
+      v-btn(href="mailto:smellydogcoding@gmail.com" flat) Contact
 </template>
 
 <script>

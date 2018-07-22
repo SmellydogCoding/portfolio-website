@@ -26,4 +26,5 @@ export default {
 
 <style>
   .container { max-width: 1300px; }
+  .v-card__actions { justify-content: center; }
 </style>

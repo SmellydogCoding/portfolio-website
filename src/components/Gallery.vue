@@ -8,7 +8,7 @@
             div
               h3 {{ project.title }}
               div.text-xs-left {{ project.description }}
-          v-card-actions(center)
+          v-card-actions
             v-btn(:href="project.website" target="new" color="success" v-if="project.website != ''") Project Website
             v-btn(:href="project.github" target="new" color="primary") Project Github
 </template>
@@ -74,5 +74,5 @@ export default {
 </script>
 
 <style scoped>
-.v-card__actions { justify-content: center; }
+/* .v-card__actions { justify-content: center; } */
 </style>
