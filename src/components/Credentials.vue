@@ -15,17 +15,17 @@ export default {
         {
           index: 0,
           title: 'Treehouse Full Stack JavaScript Degree',
-          website: 'http://www.google.com'
+          website: 'https://www.credential.net/0qxmcvzi'
         },
         {
           index: 1,
           title: 'VueJS 2 - The Complete Guide',
-          website: 'http://www.google.com'
+          website: 'https://www.udemy.com/certificate/UC-AUBVE1AB/'
         },
         {
           index: 2,
           title: 'MongoDB for NodeJS Developers',
-          website: 'http://www.google.com'
+          website: 'http://university.mongodb.com/course_completion/a86e6989-ad53-4a7e-b2e8-cc10713c'
         }
       ]
     }

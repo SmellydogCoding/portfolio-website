@@ -48,7 +48,7 @@ export default {
           src: require('../assets/tictactoe.jpg'),
           title: 'Tic Tac Toe',
           description: 'A website that lets you play tic-tac-toe against the computer or another (local) player.',
-          website: 'https://sdc-tic-tac-toe.herokuapp.com/',
+          website: 'https://smellydogcoding.github.io/tic-tac-toe-v3',
           github: 'https://github.com/SmellydogCoding/tic-tac-toe-v3'
         },
         {
@@ -64,7 +64,7 @@ export default {
           src: require('../assets/random.jpg'),
           title: 'Random Number Generator',
           description: 'A website that generates random numbers and keeps a list of the numbers choosen.',
-          website: 'http://www.smellydogcoding.com/random',
+          website: 'https://smellydogcoding.github.io/random-number-generator',
           github: 'https://github.com/SmellydogCoding/portfolio/blob/master/build/server/views/random.html'
         },
       ]
@@ -72,7 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* .v-card__actions { justify-content: center; } */
-</style>
