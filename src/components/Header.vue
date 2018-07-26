@@ -8,11 +8,11 @@
         br
         | #[span.body-1 Clean coding from a big smelly dog]
     v-spacer
-    v-toolbar-items.hidden-sm-and-down
+    v-toolbar-items.hidden-xs-only
       v-btn(to="/" flat) Home
       v-btn(to="/about" flat) About
       v-btn(href="mailto:smellydogcoding@gmail.com" flat) Contact
-    app-MobileMenu.hidden-md-and-up
+    app-MobileMenu.hidden-sm-and-up
 </template>
 
 <script>
