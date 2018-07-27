@@ -17,6 +17,12 @@ const router = new Router({
       name: 'about',
       component: () => import('./views/About.vue'),
       meta: { title: 'About Me' }
+    },
+    {
+      path: '*',
+      name: '404',
+      component: () => import('./views/FourOhFour.vue'),
+      meta: { title: '404 - Page Not Found' }
     }
   ]
 })
