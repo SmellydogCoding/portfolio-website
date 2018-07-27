@@ -1,5 +1,6 @@
 <template lang="pug">
   v-container(text-xs-center)
+    h1.mb-2 Featured Projects
     v-layout(row wrap)
       v-flex(xs12 md6 lg4 v-for="project in projects" :key="project.index")
         v-card.text-xs-center.mx-4.mb-4

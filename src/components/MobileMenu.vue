@@ -17,7 +17,7 @@
         router-link(to="/about" tag="v-list-tile" active-class="active")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center About
-        router-link(to="mailto:smellydogcoding@gmail.com" tag="v-list-tile" active-class="active")
+        a.v-list__tile.v-list__tile--link(href="mailto:smellydogcoding@gmail.com")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center Contact
 </template>

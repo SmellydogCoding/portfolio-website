@@ -25,6 +25,16 @@ export default {
 </script>
 
 <style>
-  .container { max-width: 1300px; }
-  .v-card__actions { justify-content: center; }
+  .container {
+    /* enlarge the container */
+    max-width: 1300px;
+    /* adding the app attribute to the toolbar (to make the mobile menu render about the main content of the page)
+    moves part of the main content up under the toolbar
+    adding top margin to the main content element moves the main content out from under the toolbar */
+    margin-top: 40px;
+  }
+  .v-card__actions { 
+    /* center action buttons in cards */
+    justify-content: center; 
+  }
 </style>

@@ -40,12 +40,8 @@ export default {
 </script>
 
 <style>
+/* compact the tiles in the credentials list */
 .v-list__tile {
 	height: 40px;
-}
-
-.v-list__tile .v-list__tile__avatar {
-  height: 35px;
-  width: 35px;
 }
 </style>
