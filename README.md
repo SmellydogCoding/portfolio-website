@@ -1,26 +1,6 @@
-# portfolio-website
+## Welcome to Smellydog Coding
+![Smellydog Logo](src/assets/sdlogo.png)
 
-## Project setup
-```
-npm install
-```
+This is the portfolio website for Daniel McNeil.&nbsp;&nbsp;I am a Full-Stack JavaScript Developer and my portfolio includes static web sites (HTML, CSS, JavaScript), Node JS applications, and Vue JS applications.&nbsp;&nbsp;I am currently seeking a full-time developer opportunity in front-end or back-end development.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
+My portfolio is deployed at: [https://smellydogcoding.com](https://smellydogcoding.com)
