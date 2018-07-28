@@ -24,14 +24,14 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       drawer: false,
       width: '350',
       height: '250',
       src: require('../assets/sdlogo.png'),
       alt: 'logo',
-      title: 'Menu',
+      title: 'Menu'
     }
   }
 }

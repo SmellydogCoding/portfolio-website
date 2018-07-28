@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       connections: [
         {
@@ -43,8 +43,8 @@ export default {
 
 <style>
   /* fit the entire image to the card */
-  .v-card__media__background { 
-    background-size: contain !important; 
+  .v-card__media__background {
+    background-size: contain !important;
     margin-top: 0.5rem;
   }
 </style>

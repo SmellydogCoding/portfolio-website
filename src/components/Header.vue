@@ -21,10 +21,10 @@ import MobileMenu from '../components/MobileMenu'
 
 export default {
   name: 'sd-header',
-  data() {
+  data () {
     return {
       src: logo,
-      alt: "Smellydog Logo"
+      alt: 'Smellydog Logo'
     }
   },
   components: {
@@ -34,12 +34,12 @@ export default {
 </script>
 
 <style scoped>
-  .sd-avatar { 
+  .sd-avatar {
     /* avatar logo size */
-    width: 48px; 
+    width: 48px;
   }
-  .noclick { 
+  .noclick {
     /* change cursor to default when hovering on the avatar since it doesn't have an associated link */
-    cursor: default; 
+    cursor: default;
   }
 </style>

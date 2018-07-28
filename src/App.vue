@@ -14,12 +14,11 @@ export default {
   name: 'App',
   data () {
     return {
-      
     }
   },
   components: {
     appHeader: Header,
-    appFooter: Footer,
+    appFooter: Footer
   }
 }
 </script>
@@ -33,8 +32,8 @@ export default {
     adding top margin to the main content element moves the main content out from under the toolbar */
     margin-top: 40px;
   }
-  .v-card__actions { 
+  .v-card__actions {
     /* center action buttons in cards */
-    justify-content: center; 
+    justify-content: center;
   }
 </style>

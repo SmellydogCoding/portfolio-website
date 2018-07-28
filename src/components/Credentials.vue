@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       credentials: [
         {
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    goto(website) {
+    goto (website) {
       window.open(website)
       return false
     }
@@ -42,6 +42,6 @@ export default {
 <style>
 /* compact the tiles in the credentials list */
 .v-list__tile {
-	height: 40px;
+  height: 40px;
 }
 </style>

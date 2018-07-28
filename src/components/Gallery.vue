@@ -15,9 +15,9 @@
 </template>
 
 <script>
-name: 'sd-gallery'
 export default {
-  data() {
+  name: 'sd-gallery',
+  data () {
     return {
       projects: [
         {
@@ -66,8 +66,8 @@ export default {
           title: 'Random Number Generator',
           description: 'A website that generates random numbers and keeps a list of the numbers choosen.',
           website: 'https://smellydogcoding.github.io/random-number-generator',
-          github: 'https://github.com/SmellydogCoding/portfolio/blob/master/build/server/views/random.html'
-        },
+          github: 'https://github.com/SmellydogCoding/random-number-generator'
+        }
       ]
     }
   }

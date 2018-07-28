@@ -9,7 +9,7 @@
 <script>
 export default {
   name: 'sd-footer',
-  data() {
+  data () {
     return {
       icons: [
         {link: 'https://twitter.com/SmellydogCoding', classes: 'fab fa-twitter'},
