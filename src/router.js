@@ -19,6 +19,12 @@ const router = new Router({
       meta: { title: 'About Me' }
     },
     {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('./views/Contact.vue'),
+      meta: { title: 'Contact Me' }
+    },
+    {
       path: '*',
       name: '404',
       component: () => import('./views/FourOhFour.vue'),
