@@ -7,19 +7,25 @@
           v-text-field(v-model="name" :error-messages="nameErrors" label="Name" required @input="$v.name.$touch()" @blur="$v.name.$touch()" solo)
           v-text-field(v-model="email" :error-messages="emailErrors" label="E-mail" required @input="$v.email.$touch()" @blur="$v.email.$touch()" solo)
           v-textarea(v-model="message" :error-messages="messageErrors" label="What's on your mind?" required @input="$v.message.$touch()" @blur="$v.message.$touch()" solo)
-          v-btn(@click="submit" color="success") Submit
-          v-btn(@click="clear" color="info") Clear
+          v-btn(v-if="status != 'success'" @click="submit" color="success" :loading="sending" :disabled="sending") Submit
+          v-btn(v-if="status != 'success'" @click="clear" color="info" :disabled="sending") Clear
+        v-alert(v-if="status === 'success'" type="success" icon="check_circle" value="true") Success!  Your message was received.  I will be contacting you shortly.
+        v-alert(v-if="status === 'fail'" type="error" icon="close" value="true") Bummer!  There was an error and your message was not received.  Please try again.  If you see this message repeatedly, please #[a(href="mailto:smellydogcoding@gmail.com") email me] and let me know.
+
 </template>
 
 <script>
 import { validationMixin } from 'vuelidate'
 import { required, email } from 'vuelidate/lib/validators'
+import axios from 'axios'
 export default {
   data () {
     return {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      sending: false,
+      status: 'unsent'
     }
   },
   mixins: [validationMixin],
@@ -52,8 +58,21 @@ export default {
   methods: {
     submit () {
       this.$v.$touch()
-      if (this.$v.$invalid) {console.log('invalid')}
-      else {console.log('submit')}
+      if (!this.$v.$invalid) {
+        this.sending = true
+        let messageData = {name: this.name, email: this.email.toLowerCase(), message: this.message}
+        axios.post('https://sd-portfolio-website.firebaseio.com/messages.json', messageData)
+          .then(res => {
+            res.status === 200 ? this.status = 'success' : this.status = 'fail'
+            this.sending = false
+            this.clear()
+          })
+          .catch(error => {
+            console.log(error)
+            this.status = 'fail'
+            this.sending = false
+          })
+      }
     },
     clear () {
       this.$v.$reset()
@@ -65,9 +84,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   align-items: center;
+}
+a {
+  color: #e3f2fd;
 }
 </style>
