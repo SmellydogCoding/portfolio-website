@@ -1,6 +1,6 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "profile-contact-form-email-function",
+  "description": "send emails after a successful contact form submisstion",
   "scripts": {
     "lint": "eslint .",
     "serve": "firebase serve --only functions",
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "firebase-admin": "~5.12.1",
-    "firebase-functions": "^1.0.3"
+    "firebase-functions": "^1.0.3",
+    "nodemailer": "^4.6.7"
   },
   "devDependencies": {
     "eslint": "^4.12.0",
