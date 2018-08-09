@@ -24,6 +24,7 @@ export default {
       name: '',
       email: '',
       message: '',
+      ipData: {},
       sending: false,
       status: 'unsent'
     }
@@ -60,7 +61,7 @@ export default {
       this.$v.$touch()
       if (!this.$v.$invalid) {
         this.sending = true
-        let messageData = {name: this.name, email: this.email.toLowerCase(), message: this.message}
+        let messageData = { name: this.name, email: this.email.toLowerCase(), message: this.message, ipData: this.ipData }
         axios.post('https://sd-portfolio-website.firebaseio.com/messages.json', messageData)
           .then(res => {
             res.status === 200 ? this.status = 'success' : this.status = 'fail'
@@ -80,6 +81,11 @@ export default {
       this.email = ''
       this.message = ''
     }
+  },
+  created () {
+    fetch('https://ipinfo.io/json')
+      .then((data) => { return data.json() })
+      .then(ip => { this.ipData = ip })
   }
 }
 </script>
