@@ -1,6 +1,7 @@
 <template lang="pug">
   v-container(text-xs-center)
-    h1.mb-2 Featured Projects
+    h1 Featured Projects
+    p Hi!&nbsp;&nbsp;I'm Dan and this is my portfolio.&nbsp;&nbsp;I'm a full stack JavaScript developer looking for a software development opportunity.&nbsp;&nbsp;These are my projects that I'm most proud of and/or feel are the most relevant.&nbsp;&nbsp;If you like what you see, message me and lets talk.&nbsp;&nbsp;Thanks for stopping by!
     v-layout(row wrap)
       v-flex(xs12 md6 lg4 v-for="project in projects" :key="project.index")
         v-card.text-xs-center.mx-4.mb-4
