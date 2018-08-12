@@ -11,7 +11,7 @@
     v-toolbar-items.hidden-xs-only
       v-btn(to="/" flat) Home
       v-btn(to="/about" flat) About
-      v-btn(href="mailto:smellydogcoding@gmail.com" flat) Contact
+      v-btn(to="/contact" flat) Contact
     app-MobileMenu.hidden-sm-and-up
 </template>
 

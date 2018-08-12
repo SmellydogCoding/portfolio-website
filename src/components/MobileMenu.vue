@@ -11,13 +11,13 @@
               v-icon close
       v-list.pt-0(dense)
         v-divider(light)
-        router-link(to="/" tag="v-list-tile" active-class="active")
+        router-link.mb-2(to="/" tag="v-list-tile" active-class="active")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center Home
-        router-link(to="/about" tag="v-list-tile" active-class="active")
+        router-link.mb-2(to="/about" tag="v-list-tile" active-class="active")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center About
-        a.v-list__tile.v-list__tile--link(href="mailto:smellydogcoding@gmail.com")
+        router-link(to="/contact" tag="v-list-tile" active-class="active")
           v-list-tile-content
             v-list-tile-title.subheading.text-xs-center Contact
 </template>
@@ -27,8 +27,8 @@ export default {
   data () {
     return {
       drawer: false,
-      width: '350',
-      height: '250',
+      width: '225',
+      height: '225',
       src: require('../assets/sdlogo.png'),
       alt: 'logo',
       title: 'Menu'
