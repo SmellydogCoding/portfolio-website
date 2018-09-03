@@ -23,6 +23,12 @@ export default {
 </script>
 
 <style scoped>
+  /* Place footer at the bottom of the screen if there is not enough content on the page. */
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
   @media screen and (min-width: 600px) {
     .copy { font-size: 1.25rem; }
   }

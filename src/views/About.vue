@@ -5,7 +5,7 @@
       v-layout.mb-2(row wrap)
         v-flex(xs12)
           app-story
-      v-layout(row wrap)
+      v-layout.mt-4(row wrap)
         v-flex(xs12 md4)
           app-cardlink(:cardSet='cardSet1')
         v-flex(xs12 md4)

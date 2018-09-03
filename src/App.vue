@@ -41,6 +41,8 @@ export default {
     max-width: 1300px;
     /* reduce top margin of a container */
     margin: auto;
+    /* Compensate for absolutely placed footer */
+    margin-bottom: 64px;
   }
 
   .v-card__actions {
