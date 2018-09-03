@@ -27,12 +27,16 @@ export default {
   data () {
     return {
       drawer: false,
-      width: '225',
+      width: '',
       height: '225',
       src: require('../assets/sdlogo.png'),
       alt: 'logo',
       title: 'Menu'
     }
+  },
+  created () {
+    // Set the width of the mobile menu.  Percent and vw values are not allowed.
+    this.width = window.innerWidth
   }
 }
 </script>

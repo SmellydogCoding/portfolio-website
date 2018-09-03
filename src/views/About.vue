@@ -1,30 +1,92 @@
 <template lang="pug">
-  v-container(text-xs-center)
-    v-layout.mb-2(row wrap)
-      v-flex(xs12)
-        app-story
-    v-layout(row wrap)
-      v-flex(xs12 md6 lg4)
-        app-code
-      v-flex(xs12 md6 lg4)
-        app-credentials
-      v-flex(xs12 md6 lg4)
-        app-connect
+  div
+    app-banner(:bannerStyles="bannerStyles" :quoteBlock="quoteBlock")
+    v-container(text-xs-center)
+      v-layout.mb-2(row wrap)
+        v-flex(xs12)
+          app-story
+      v-layout(row wrap)
+        v-flex(xs12 md4)
+          app-cardlink(:cardSet='cardSet1')
+        v-flex(xs12 md4)
+          app-credentials
+        v-flex(xs12 md4)
+          app-cardlink(:cardSet='cardSet2')
 </template>
 
 <script>
+import Banner from '../components/Banner'
 import Story from '../components/Story'
-import Code from '../components/Code'
+import CardLink from '../components/CardLink'
 import Credentials from '../components/Credentials'
-import Connect from '../components/Connect'
 
 export default {
   name: 'sd-about',
+  data () {
+    return {
+      bannerStyles: {
+        height: '150px',
+        background: `linear-gradient(rgba(18, 122, 0, 0.75), rgba(18, 122, 0, 0.75)), url(${require('../assets/sdlogo-banner.png')}) no-repeat top left`,
+        'justify-content': 'center'
+      },
+      quoteBlock: {
+        quote: `I'm not insane, my mother had me tested.`,
+        attribution: 'Dr. Sheldon Cooper'
+      },
+      cardSet1: {
+        layoutSize: 'xs6',
+        sectionName: 'Code',
+        setData: [
+          {
+            index: 0,
+            src: require('../assets/octocat.png'),
+            name: 'Github',
+            website: 'https://github.com/SmellydogCoding',
+            color: 'primary--text'
+          },
+          {
+            index: 1,
+            src: require('../assets/codepen.png'),
+            name: 'Codepen',
+            website: 'https://codepen.io/SmellydogCoding',
+            color: 'primary--text'
+          }
+        ]
+      },
+      cardSet2: {
+        layoutSize: 'xs4',
+        sectionName: 'Connect',
+        setData: [
+          {
+            index: 0,
+            src: require('../assets/pdf.png'),
+            name: 'Resume',
+            website: 'https://www.dropbox.com/s/jaank532aw9p3mb/resume.pdf?raw=1',
+            color: 'primary--text'
+          },
+          {
+            index: 1,
+            src: require('../assets/linkedin.png'),
+            name: 'LinkedIn',
+            website: 'https://linkedin.com/in/daniel-mcneil',
+            color: 'accent--text'
+          },
+          {
+            index: 2,
+            src: require('../assets/twitter.png'),
+            name: 'Twitter',
+            website: 'https://twitter.com/SmellydogCoding',
+            color: 'blue--text text--lighten-1'
+          }
+        ]
+      }
+    }
+  },
   components: {
     appStory: Story,
-    appCode: Code,
+    appCardlink: CardLink,
     appCredentials: Credentials,
-    appConnect: Connect
+    appBanner: Banner
   }
 }
 </script>

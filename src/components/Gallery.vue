@@ -1,7 +1,6 @@
 <template lang="pug">
-  v-container(text-xs-center)
-    h1 Featured Projects
-    p Hi!&nbsp;&nbsp;I'm Dan and this is my portfolio.&nbsp;&nbsp;I'm a full stack JavaScript developer looking for a software development opportunity.&nbsp;&nbsp;These are my projects that I'm most proud of and/or feel are the most relevant.&nbsp;&nbsp;If you like what you see, message me and lets talk.&nbsp;&nbsp;Thanks for stopping by!
+  div
+    h2.my-2.primary--text.text-xs-center Featured Projects
     v-layout(row wrap)
       v-flex(xs12 md6 lg4 v-for="project in projects" :key="project.index")
         v-card.text-xs-center.mx-4.mb-4
@@ -11,8 +10,13 @@
               h3 {{ project.title }}
               div.text-xs-left {{ project.description }}
           v-card-actions
-            v-btn(:href="project.website" target="new" color="success" v-if="project.website != ''") Project Website
-            v-btn(:href="project.github" target="new" color="primary") Project Github
+            v-layout(row wrap)
+              v-flex(xs6 v-if="project.website != ''")
+                v-btn(:href="project.website" target="new" color="primary" flat) Website
+              v-flex(xs6 v-if="project.website != ''")
+                v-btn(:href="project.github" target="new" color="accent" flat) Github
+              v-flex(xs12 v-else)
+                v-btn(:href="project.github" target="new" color="accent" flat) Github
 </template>
 
 <script>
@@ -33,7 +37,7 @@ export default {
           index: 1,
           src: require('../assets/outdoor.jpg'),
           title: 'Outdoor Activities Finder',
-          description: 'A website that allows a user to find outdoor activities near their location.\u00A0\u00A0You can use the location API on your device or enter a zip code.',
+          description: 'A website that allows a user to find outdoor activities near their location.\u00A0\u00A0They can use Location API or zip code.',
           website: 'https://outdoor-activities-locator.herokuapp.com/',
           github: 'https://github.com/SmellydogCoding/outdoor-activities-finder'
         },
@@ -41,7 +45,7 @@ export default {
           index: 2,
           src: require('../assets/fieldguide.jpg'),
           title: 'Electronic Field Guide',
-          description: 'A Windows desktop application that organizes documents used by Environmental Health field inspectors.\u00A0\u00A0Created with Electron.',
+          description: 'A Electron Windows desktop application that organizes documents used by Environmental Health field inspectors.',
           website: '',
           github: 'https://github.com/SmellydogCoding/electronic-field-guide'
         },

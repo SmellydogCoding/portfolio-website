@@ -1,6 +1,6 @@
 <template lang="pug">
   div.mx-2
-    h2.mb-2 Credentials
+    h2.accent--text.mb-2 Credentials
     v-list
       v-list-tile(v-for="credential in credentials" :key="credential.index" @click="goto(credential.website)")
         v-list-tile-content

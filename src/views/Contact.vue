@@ -7,8 +7,8 @@
           v-text-field(v-model="name" :error-messages="nameErrors" label="Name" required @input="$v.name.$touch()" @blur="$v.name.$touch()" solo)
           v-text-field(v-model="email" :error-messages="emailErrors" label="E-mail" required @input="$v.email.$touch()" @blur="$v.email.$touch()" solo)
           v-textarea(v-model="message" :error-messages="messageErrors" label="What's on your mind?" required @input="$v.message.$touch()" @blur="$v.message.$touch()" solo)
-          v-btn(v-if="status != 'success'" @click="submit" color="success" :loading="sending" :disabled="sending") Submit
-          v-btn(v-if="status != 'success'" @click="clear" color="info" :disabled="sending") Clear
+          v-btn(v-if="status != 'success'" @click="submit" color="primary" :loading="sending" :disabled="sending") Submit
+          v-btn(v-if="status != 'success'" @click="clear" color="accent" :disabled="sending") Clear
         v-alert(v-if="status === 'success'" type="success" icon="check_circle" value="true") Success!  Your message was received.  I will be contacting you shortly.
         v-alert(v-if="status === 'fail'" type="error" icon="close" value="true") Bummer!  There was an error and your message was not received.  Please try again.  If you see this message repeatedly, please #[a(href="mailto:smellydogcoding@gmail.com") email me] and let me know.
 
@@ -83,6 +83,7 @@ export default {
     }
   },
   created () {
+    // Get IP Address of user which is submitted with the form data
     fetch('https://ipinfo.io/json')
       .then((data) => { return data.json() })
       .then(ip => { this.ipData = ip })
@@ -91,11 +92,11 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  align-items: center;
-}
-a {
-  color: #e3f2fd;
-}
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  a {
+    color: #e3f2fd;
+  }
 </style>

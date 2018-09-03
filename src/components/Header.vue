@@ -1,17 +1,16 @@
 <template lang="pug">
-  v-toolbar.mt-0(app dark color="primary")
-    v-toolbar-side-icon.noclick
-      v-avatar(size="48")
-        img.sd-avatar(:src='src' :alt='alt')
-    v-toolbar-title.ml-4.mt-3
-      p.title Smellydog Coding
-        br
-        | #[span.body-1 Clean coding from a big smelly dog]
+  v-toolbar(fixed flat color="background")
+    router-link(to='/')
+      v-toolbar-side-icon
+        v-avatar(size="48")
+          img(:src='src' :alt='alt')
+    v-toolbar-title
+      p.mb-0 Smellydog Coding
     v-spacer
     v-toolbar-items.hidden-xs-only
-      v-btn(to="/" flat) Home
-      v-btn(to="/about" flat) About
-      v-btn(to="/contact" flat) Contact
+      v-btn(to="/" flat color='primary') Home
+      v-btn(to="/about" flat color='primary') About
+      v-btn(to="/contact" flat color='primary') Contact
     app-MobileMenu.hidden-sm-and-up
 </template>
 
@@ -32,14 +31,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .sd-avatar {
-    /* avatar logo size */
-    width: 48px;
-  }
-  .noclick {
-    /* change cursor to default when hovering on the avatar since it doesn't have an associated link */
-    cursor: default;
-  }
-</style>

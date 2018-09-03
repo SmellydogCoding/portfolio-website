@@ -7,7 +7,13 @@
         p.my-4 Sorry, but that page you were looking for is not part of this website.&nbsp;&nbsp;Please click the back button or choose on the menu options above.&nbsp;&nbsp;I you believe that you are seeing this message in error (and this should be an actual page) please #[a(href="mailto:smellydogcoding@gmail.com") email me] and let me know.
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+  h1 {
+    margin-top: 49px;
+    @media screen and (min-width: 960px) {
+      margin-top: 57px;
+    }
+  }
   /* resize image for very small ( width < 400px ) devices */
   img {
     max-width: 100%;
