@@ -1,6 +1,6 @@
 <template lang="pug">
   v-footer(color="primary" height="64px")
-      p.copy.ml-4.mb-0.white--text &copy; 2018 #[span.blue--text--darken-4 Smellydog Coding]
+      p.copy.ml-4.mb-0.white--text &copy; {{ new Date().getFullYear() }} #[span.blue--text--darken-4 Smellydog Coding]
       v-spacer
       div.mr-4
         v-btn.white--text.mr-4(v-for="icon in icons" :key="icon.index" icon :href="icon.link" target="new")
