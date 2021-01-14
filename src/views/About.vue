@@ -54,29 +54,15 @@ export default {
         ]
       },
       cardSet2: {
-        layoutSize: 'xs4',
+        layoutSize: 'xs4 offset-xs-4',
         sectionName: 'Connect',
         setData: [
           {
             index: 0,
-            src: require('../assets/pdf.png'),
-            name: 'Resume',
-            website: 'https://www.dropbox.com/s/jaank532aw9p3mb/resume.pdf?raw=1',
-            color: 'primary--text'
-          },
-          {
-            index: 1,
             src: require('../assets/linkedin.png'),
             name: 'LinkedIn',
             website: 'https://linkedin.com/in/daniel-mcneil',
             color: 'accent--text'
-          },
-          {
-            index: 2,
-            src: require('../assets/twitter.png'),
-            name: 'Twitter',
-            website: 'https://twitter.com/SmellydogCoding',
-            color: 'blue--text text--lighten-1'
           }
         ]
       }
