@@ -4,9 +4,9 @@
       v-flex(xs12 md6 offset-md3)
         form(@submit.prevent="submit")
           h1.my-2 Send Me a Message
-          v-text-field(v-model="name" :error-messages="nameErrors" label="Name" required @input="$v.name.$touch()" @blur="$v.name.$touch()" solo)
-          v-text-field(v-model="email" :error-messages="emailErrors" label="E-mail" required @input="$v.email.$touch()" @blur="$v.email.$touch()" solo)
-          v-textarea(v-model="message" :error-messages="messageErrors" label="What's on your mind?" required @input="$v.message.$touch()" @blur="$v.message.$touch()" solo)
+          v-text-field(v-model="name" :error-messages="nameErrors" label="Name" name="from_name" required @input="$v.name.$touch()" @blur="$v.name.$touch()" solo)
+          v-text-field(v-model="email" :error-messages="emailErrors" label="E-mail" name="from_email" required @input="$v.email.$touch()" @blur="$v.email.$touch()" solo)
+          v-textarea(v-model="message" :error-messages="messageErrors" label="What's on your mind?" name="message" required @input="$v.message.$touch()" @blur="$v.message.$touch()" solo)
           v-btn(v-if="status != 'success'" @click="submit" color="primary" :loading="sending" :disabled="sending") Submit
           v-btn(v-if="status != 'success'" @click="clear" color="accent" :disabled="sending") Clear
         v-alert(v-if="status === 'success'" type="success" icon="check_circle" value="true") Success!  Your message was received.  I will be contacting you shortly.
@@ -17,7 +17,8 @@
 <script>
 import { validationMixin } from 'vuelidate'
 import { required, email } from 'vuelidate/lib/validators'
-import axios from 'axios'
+// import axios from 'axios'
+import emailjs from 'emailjs-com'
 export default {
   data () {
     return {
@@ -57,22 +58,47 @@ export default {
     }
   },
   methods: {
-    submit () {
+    submit (event) {
       this.$v.$touch()
       if (!this.$v.$invalid) {
         this.sending = true
-        let messageData = { name: this.name, email: this.email.toLowerCase(), message: this.message, ipData: this.ipData }
-        axios.post('https://sd-portfolio-website.firebaseio.com/messages.json', messageData)
-          .then(res => {
-            res.status === 200 ? this.status = 'success' : this.status = 'fail'
+        let templateParams = {
+          from_name: this.name,
+          from_email: this.email,
+          message: this.message,
+          ipAddress: this.ipData.ip,
+          ipHostName: this.ipData.hostname,
+          ipOrganization: this.ipData.org,
+          ipCity: this.ipData.city,
+          ipRegion: this.ipData.region,
+          ipZipcode: this.ipData.postal,
+          ipCountry: this.ipData.country,
+          ipCoords: this.ipData.loc,
+          ipTimezone: this.ipData.timezone
+        }
+        emailjs.send(process.env.VUE_APP_EMAILJS_SERVICE_ID, process.env.VUE_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.VUE_APP_EMAILJS_USERID)
+          .then((result) => {
+            this.status = 'success'
             this.sending = false
             this.clear()
-          })
-          .catch(error => {
-            console.log(error)
+            console.log('SUCCESS!', result.status, result.text)
+          }, (error) => {
             this.status = 'fail'
             this.sending = false
+            console.log('FAILED...', error)
           })
+        // let messageData = { name: this.name, email: this.email.toLowerCase(), message: this.message, ipData: this.ipData }
+        // axios.post('https://sd-portfolio-website.firebaseio.com/messages.json', messageData)
+        //   .then(res => {
+        //     res.status === 200 ? this.status = 'success' : this.status = 'fail'
+        //     this.sending = false
+        //     this.clear()
+        //   })
+        //   .catch(error => {
+        //     console.log(error)
+        //     this.status = 'fail'
+        //     this.sending = false
+        //   })
       }
     },
     clear () {
@@ -84,7 +110,7 @@ export default {
   },
   created () {
     // Get IP Address of user which is submitted with the form data
-    fetch('https://ipinfo.io/json')
+    fetch('https://ipinfo.io/json?token=' + process.env.VUE_APP_IPINFO_TOKEN)
       .then((data) => { return data.json() })
       .then(ip => { this.ipData = ip })
   }

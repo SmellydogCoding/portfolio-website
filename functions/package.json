@@ -1,6 +1,9 @@
 {
   "name": "profile-contact-form-email-function",
   "description": "send emails after a successful contact form submisstion",
+  "engines": {
+    "node": "10"
+  },
   "scripts": {
     "lint": "eslint .",
     "serve": "firebase serve --only functions",

@@ -2,6 +2,10 @@
   "include": [
     "./src/**/*"
   ],
+  "exclude": [
+    "./src/main.js",
+    "./src/plugins/vuetify.js"
+  ],
   "compilerOptions": {
     "module": "es2015",
     "moduleResolution": "node",

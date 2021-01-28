@@ -13,9 +13,9 @@ export default {
   data () {
     return {
       icons: [
-        {index: 0, link: 'https://twitter.com/SmellydogCoding', classes: 'fab fa-twitter'},
-        {index: 1, link: 'https://linkedin.com/in/daniel-mcneil', classes: 'fab fa-linkedin'},
-        {index: 2, link: 'mailto:smellydogcoding@gmail.com', classes: 'fas fa-envelope'}
+        // {index: 0, link: 'https://twitter.com/SmellydogCoding', classes: 'fab fa-twitter'},
+        {index: 0, link: 'https://linkedin.com/in/daniel-mcneil', classes: 'fab fa-linkedin'},
+        {index: 1, link: 'mailto:smellydogcoding@gmail.com', classes: 'fas fa-envelope'}
       ]
     }
   }
