@@ -1,37 +1,48 @@
 {
   "name": "portfolio-website",
-  "version": "3.0.0",
+  "version": "0.0.1",
+  "description": "Coding portfolio for Daniel McNeil",
+  "productName": "Smellydog Coding",
+  "author": "Daniel McNeil <smellydogcoding@gmail.com>",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "@quasar/extras": "^1.0.0",
+    "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
-    "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0",
-    "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
-    "vuelidate": "^0.7.4",
-    "vuetify": "^1.0.19",
-    "whatwg-fetch": "^2.0.4"
+    "quasar": "^2.0.0-beta.1"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.0.0-beta.49",
-    "@vue/cli-plugin-babel": "^3.0.0-rc.5",
-    "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
-    "@vue/cli-plugin-unit-jest": "^3.0.0-rc.5",
-    "@vue/cli-service": "^3.0.0-rc.5",
-    "@vue/eslint-config-standard": "^3.0.0-rc.5",
-    "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^7.0.1",
-    "vue-cli-plugin-vuetify": "^0.1.6",
-    "vue-template-compiler": "^2.5.16"
+    "@quasar/app": "^3.0.0-beta.1",
+    "@quasar/quasar-app-extension-dotenv": "^1.1.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "eslint-webpack-plugin": "^2.4.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }

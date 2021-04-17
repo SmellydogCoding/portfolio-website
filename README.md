@@ -1,6 +1,26 @@
-## Welcome to Smellydog Coding
-![Smellydog Logo](src/assets/sdlogo.png)
+# portfolio-website (portfolio-website)
 
-This is the portfolio website for Daniel McNeil.&nbsp;&nbsp;I am a Full-Stack JavaScript Developer and my portfolio includes static web sites (HTML, CSS, JavaScript), Node JS applications, and Vue JS applications.&nbsp;&nbsp;I am currently seeking a full-time developer opportunity in front-end or back-end development.
+Coding portfolio for Daniel McNeil
 
-My portfolio is deployed at: [https://smellydogcoding.com](https://smellydogcoding.com)
+## Install the dependencies
+```bash
+npm install
+```
+
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
+
+### Lint the files
+```bash
+npm run lint
+```
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.conf.js](https://v2.quasar.dev/quasar-cli/quasar-conf-js).
