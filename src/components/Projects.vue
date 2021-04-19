@@ -9,14 +9,14 @@ div.row.q-px-md
         source(media="(max-width: 1023px)" :srcset="project.srcset[1]")
         source(media="(max-width: 1300px)" :srcset="project.srcset[2]")
         source(media="(max-width: 1920px)" :srcset="project.srcset[3]")
-        img(:src="project.srcset[4]" :alt="project.alt" style="max-width: 100%;")
+        img(:src="project.srcset[4]" :alt="project.alt" style="width: 100%; height: auto;" width="1024" height="768")
       q-card-section
         div.text-h6.text-center {{ project.title }}
       q-card-section
         div {{ project.description}}
       q-card-actions
-        q-btn(color="primary" :label="project.button1.label" type="a" :href="project.button1.link" target="_blank")
-        q-btn.q-pl-md.button2(v-if="project.button2" color="secondary" :label="project.button2.label" :to="project.button2.link")
+        q-btn(color="primary" :label="project.button1.label" type="a" :href="project.button1.link" target="_blank" rel="noopener")
+        q-btn.q-pl-md.button2(v-if="project.button2" color="secondary" :label="project.button2.label" :to="project.button2.link" rel="noopener")
 </template>
 
 <script>
